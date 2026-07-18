@@ -104,7 +104,7 @@ export default function Home() {
             <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
               <Link
                 to="/register"
-                className="rounded-xl bg-green-600 px-7 py-4 font-medium 
+                className="rounded-xl bg-green-600 px-7 py-2 font-medium 
                 text-white transition hover:bg-green-800"
               >
                 Get Started
@@ -112,13 +112,13 @@ export default function Home() {
 
               <Link
                 to="/login"
-                className="rounded-xl border px-7 py-4 font-medium hover:bg-gray-50"
+                className="rounded-xl border px-7 py-2 font-medium hover:bg-gray-50"
               >
                 Login
               </Link>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-8 text-sm text-neutral-700">
+            <div className="mt-12 flex flex-wrap justify-evenly gap-8 text-center text-sm text-neutral-700">
               <div>
                 <p className="text-3xl font-bold text-neutral-900">AI</p>
                 <p>Proposal Writing</p>
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1">
+          <div className="w-full mb-4 lg:flex-1">
             <div className="rounded-3xl border bg-gray-50 p-8 shadow-xl">
               <div className="mb-8 flex items-center justify-between">
                 <h2 className="text-xl font-semibold">Dashboard Preview</h2>
