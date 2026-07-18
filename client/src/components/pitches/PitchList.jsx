@@ -2,7 +2,7 @@ import PitchCard from "./PitchCard";
 
 export default function PitchList({ pitches, onView, onDelete }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div className="flex flex-col gap-4">
       {pitches.map((pitch) => (
         <PitchCard
           key={pitch._id}

@@ -4,38 +4,48 @@ import {
   FiFileText,
   FiGlobe,
   FiMapPin,
+  FiPhone,
 } from "react-icons/fi";
 
 export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
   return (
-    <article className="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md">
-      <h2 className="text-xl font-semibold text-text">
-        {project.businessName}
-      </h2>
+    <article
+      className="rounded-xl flex flex-col bg-white justify-between
+     p-6 shadow-sm transition hover:shadow-md"
+    >
+      <div>
+        <h2 className="text-xl font-semibold text-text">
+          {project.businessName}
+        </h2>
 
-      <div className="mt-4 space-y-2 text-sm text-muted">
-        <p>{project.industry}</p>
+        <div className="mt-2 space-y-2 text-sm text-muted">
+          <p>{project.industry}</p>
 
-        <div className="flex items-center gap-2">
-          <FiMapPin />
-          <span>{project.city}</span>
+          <div className="flex items-center gap-2">
+            <FiMapPin />
+            <span>{project.city}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <FiGlobe />
+            <a
+              href={project.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="truncate hover:text-primary"
+            >
+              {project.website}
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <FiPhone />
+            <span>{project.phone}</span>
+          </div>
+
+          {project.notes && (
+            <p className="line-clamp-2 text-sm">{project.notes}</p>
+          )}
         </div>
-
-        <div className="flex items-center gap-2">
-          <FiGlobe />
-          <a
-            href={project.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="truncate hover:text-primary"
-          >
-            {project.website}
-          </a>
-        </div>
-
-        {project.notes && (
-          <p className="line-clamp-2 text-sm">{project.notes}</p>
-        )}
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">

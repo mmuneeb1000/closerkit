@@ -4,7 +4,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main>
+      <main className="bg-gray-100">
         <Outlet />
       </main>
     </>

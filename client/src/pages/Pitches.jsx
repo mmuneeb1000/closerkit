@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 
 import PitchList from "../components/pitches/PitchList";
-import ProposalModal from "../components/projects/ProposalModal";
+import PitchModal from "../components/pitches/PitchModal";
 import EmptyPitches from "../components/pitches/EmptyPitches";
 
 export default function Pitches() {
@@ -127,15 +127,13 @@ export default function Pitches() {
           />
         )}
 
-        <ProposalModal
+        <PitchModal
           open={showProposal}
           pitch={selectedPitch}
           onClose={() => {
             setShowProposal(false);
             setSelectedPitch(null);
           }}
-          onDelete={handleDelete}
-          onRegenerate={handleRegenerate}
         />
       </div>
     </section>
