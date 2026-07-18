@@ -17,7 +17,7 @@ export const getDashboard = async (req, res) => {
       })
         .populate("project", "businessName")
         .sort({ createdAt: -1 })
-        .limit(5),
+        .limit(3),
     ]);
 
     res.status(200).json({
