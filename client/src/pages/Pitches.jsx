@@ -98,9 +98,11 @@ export default function Pitches() {
   return (
     <section className="min-h-screen bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="flex justify-between items-center">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold text-text">Saved Proposals</h1>
+        <div className="flex flex-col md:flex-row md:justify-between items-center">
+          <div className="mb-4 mx-4 text-center md:text-left">
+            <h1 className="text-4xl font-bold text-neutral-900">
+              Saved Proposals
+            </h1>
 
             <p className="mt-2 text-muted">
               View and manage all AI-generated website proposals.
@@ -109,7 +111,7 @@ export default function Pitches() {
           {pitches.length > 0 && (
             <button
               onClick={handleDeleteAll}
-              className="rounded-lg border border-red-200 px-5 py-2 text-red-600 transition hover:bg-red-50"
+              className="rounded-lg border border-red-200 mb-4 px-5 py-2 text-red-600 transition hover:bg-red-50"
             >
               Delete All
             </button>

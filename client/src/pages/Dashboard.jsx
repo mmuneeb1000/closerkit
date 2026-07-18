@@ -56,7 +56,7 @@ export default function Dashboard() {
   return (
     <section className="min-h-screen bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="mb-10">
+        <div className="mb-10 mx-4 text-center md:text-left">
           <h1 className="text-4xl font-bold text-text">Dashboard</h1>
 
           <p className="mt-2 text-muted">
