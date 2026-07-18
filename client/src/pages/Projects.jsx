@@ -132,7 +132,7 @@ export default function Projects() {
 
           <button
             onClick={() => setShowProjectModal(true)}
-            className="rounded-lg bg-green-600 px-5 py-3 font-medium text-white transition hover:bg-bg-green-700"
+            className="rounded-lg bg-green-600 px-5 py-3 font-medium text-white transition hover:bg-green-700"
           >
             New Project
           </button>

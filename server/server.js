@@ -8,6 +8,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import projectRoutes from "./routes/projectRoutes.js";
 import pitchRoutes from "./routes/pitchRoutes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -27,6 +28,7 @@ app.use(limiter);
 app.use("/api/auth", authRoutes);
 app.use("/api/pitches", pitchRoutes);
 app.use("/api/projects", projectRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "CloserKit API is running" });

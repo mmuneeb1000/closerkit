@@ -42,7 +42,7 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
         <button
           onClick={() => onGenerate(project)}
           className="flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-white 
-          transition hover:bg-primary-dark"
+          transition hover:bg-green-700"
         >
           <FiFileText />
           Generate
