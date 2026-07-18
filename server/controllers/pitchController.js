@@ -1,4 +1,5 @@
 import Project from "../models/Project.js";
+import Pitch from "../models/Pitch.js";
 import { generateProposal } from "../services/openaiService.js";
 
 export const createProposal = async (req, res) => {
@@ -16,11 +17,20 @@ export const createProposal = async (req, res) => {
       });
     }
 
-    const proposal = await generateProposal(project);
+    // Generate AI proposal
+    const aiResult = await generateProposal(project);
 
-    res.status(200).json({
-      proposal,
+    // Save to MongoDB
+    const pitch = await Pitch.create({
+      user: req.user._id,
+      project: project._id,
+      type: "proposal",
+      prompt: aiResult.prompt,
+      response: aiResult.response,
+      model: aiResult.model,
     });
+
+    res.status(201).json(pitch);
   } catch (error) {
     console.error(error);
 

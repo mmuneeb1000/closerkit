@@ -1,10 +1,9 @@
 import OpenAI from "openai";
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export const generateProposal = async (project) => {
+  const client = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
   const prompt = `
 Create a professional website development proposal in 100-120 words.
 
@@ -31,5 +30,9 @@ Keep it friendly and persuasive.
     input: prompt,
   });
 
-  return response.output_text;
+  return {
+    prompt,
+    response: response.output_text,
+    model: "gpt-4.1-mini",
+  };
 };
