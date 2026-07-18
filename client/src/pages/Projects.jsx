@@ -149,9 +149,7 @@ export default function Projects() {
                 key={project._id}
                 project={project}
                 onGenerate={generateProposal}
-                onEdit={(project) => {
-                  console.log("Edit:", project);
-                }}
+                onEdit={handleEdit}
                 onDelete={() => handleDeleteClick(project)}
               />
             ))}
