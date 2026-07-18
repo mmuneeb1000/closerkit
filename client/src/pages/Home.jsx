@@ -76,28 +76,26 @@ export default function Home() {
 
   return (
     <main className="bg-surface">
-      {/* Hero */}
-
       <section className="border-b bg-white">
         <div
           className="mx-auto flex max-w-7xl flex-col items-center gap-16 px-6 
-        py-24 text-center lg:flex-row lg:text-left"
+        py-6 lg:py-24 text-center lg:flex-row lg:text-left"
         >
           <div className="flex-1">
             <span
               className="inline-flex items-center rounded-full 
-            bg-green-100 px-4 py-2 text-sm font-medium text-primary"
+            bg-green-100 px-4 py-2 text-sm font-medium text-neutral-900"
             >
               AI Powered Sales Workspace
             </span>
 
-            <h1 className="mt-8 text-4xl font-bold leading-tight text-text lg:text-5xl">
+            <h1 className="mt-8 text-4xl font-bold leading-tight text-neutral-900 lg:text-5xl">
               Close More Website
               <br />
               Clients With AI
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-muted">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-700">
               CloserKit helps freelancers, web developers, and agencies organize
               prospects, generate personalized website proposals, and manage
               client outreach from a single dashboard.
@@ -120,19 +118,19 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-8 text-sm text-muted">
+            <div className="mt-12 flex flex-wrap gap-8 text-sm text-neutral-700">
               <div>
-                <p className="text-3xl font-bold text-primary">AI</p>
+                <p className="text-3xl font-bold text-neutral-900">AI</p>
                 <p>Proposal Writing</p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-primary">24/7</p>
+                <p className="text-3xl font-bold text-neutral-900">24/7</p>
                 <p>Available</p>
               </div>
 
               <div>
-                <p className="text-3xl font-bold text-primary">100%</p>
+                <p className="text-3xl font-bold text-neutral-900">100%</p>
                 <p>Cloud Based</p>
               </div>
             </div>
@@ -143,34 +141,34 @@ export default function Home() {
               <div className="mb-8 flex items-center justify-between">
                 <h2 className="text-xl font-semibold">Dashboard Preview</h2>
 
-                <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-primary">
+                <span className="rounded-full bg-green-100 px-3 py-1 text-sm text-neutral-900">
                   Live
                 </span>
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-xl bg-white p-5 shadow-sm">
-                  <FiFolder className="text-primary" size={28} />
+                  <FiFolder className="text-neutral-900" size={28} />
                   <p className="mt-3 text-3xl font-bold">24</p>
-                  <p className="text-muted">Projects</p>
+                  <p className="text-neutral-700">Projects</p>
                 </div>
 
                 <div className="rounded-xl bg-white p-5 shadow-sm">
-                  <FiFileText className="text-primary" size={28} />
+                  <FiFileText className="text-neutral-900" size={28} />
                   <p className="mt-3 text-3xl font-bold">93</p>
-                  <p className="text-muted">Proposals</p>
+                  <p className="text-neutral-700">Proposals</p>
                 </div>
 
                 <div className="rounded-xl bg-white p-5 shadow-sm">
-                  <FiTrendingUp className="text-primary" size={28} />
+                  <FiTrendingUp className="text-neutral-900" size={28} />
                   <p className="mt-3 text-3xl font-bold">71%</p>
-                  <p className="text-muted">Response Rate</p>
+                  <p className="text-neutral-700">Response Rate</p>
                 </div>
 
                 <div className="rounded-xl bg-white p-5 shadow-sm">
-                  <FiZap className="text-primary" size={28} />
+                  <FiZap className="text-neutral-900" size={28} />
                   <p className="mt-3 text-3xl font-bold">8 sec</p>
-                  <p className="text-muted">Average Generation</p>
+                  <p className="text-neutral-700">Average Generation</p>
                 </div>
               </div>
             </div>
@@ -178,39 +176,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
-
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:py-24">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-text">Everything You Need</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900">
+            Everything You Need
+          </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted">
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-neutral-700">
             CloserKit combines project management with AI-powered proposal
             generation to simplify client outreach.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-4 lg:gap-8 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => (
             <article
               key={feature.title}
               className="rounded-2xl bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="mb-6 inline-flex rounded-xl bg-green-100 p-4 text-primary">
+              <div className="mb-6 inline-flex rounded-xl bg-green-100 p-4 text-neutral-900">
                 {feature.icon}
               </div>
 
               <h3 className="text-2xl font-semibold">{feature.title}</h3>
 
-              <p className="mt-4 leading-7 text-muted">{feature.description}</p>
+              <p className="mt-4 leading-7 text-neutral-700">
+                {feature.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Workflow */}
-
-      <section className="bg-white py-24">
+      <section className="bg-white py-8 lg:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-center text-4xl font-bold">Simple Workflow</h2>
 
@@ -236,10 +234,10 @@ export default function Home() {
 
       {/* Future */}
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:py-24">
         <div className="rounded-3xl bg-white p-12 shadow-sm">
           <div className="flex items-center gap-3">
-            <FiLayers size={30} className="text-primary" />
+            <FiLayers size={30} className="text-neutral-900" />
 
             <h2 className="text-4xl font-bold">Planned Features</h2>
           </div>
@@ -250,7 +248,7 @@ export default function Home() {
                 key={item}
                 className="flex items-center gap-3 rounded-xl border p-5"
               >
-                <FiCheckCircle className="text-primary" />
+                <FiCheckCircle className="text-neutral-900" />
                 {item}
               </div>
             ))}
@@ -260,11 +258,13 @@ export default function Home() {
 
       {/* CTA */}
 
-      <section className="bg-green-600 py-24 text-white">
+      <section className="bg-green-600 pt-8 pb-20 lg:py-24 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <FiGlobe size={56} className="mx-auto mb-8" />
 
-          <h2 className="text-5xl font-bold">Ready to Close More Clients?</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold">
+            Ready to Close More Clients?
+          </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-green-50">
             Start organizing your prospects, generate personalized website
