@@ -18,10 +18,7 @@ This repository contains the backend API built with Node.js, Express, MongoDB, a
 - [API Endpoints](#api-endpoints)
 - [Authentication Flow](#authentication-flow)
 - [Database Models](#database-models)
-- [Deployment](#deployment)
 - [Security](#security)
-- [Future Improvements](#future-improvements)
-- [Credits](#credits)
 
 ---
 
@@ -358,33 +355,6 @@ Stores AI-generated content.
 
 ---
 
-# Deployment
-
-The backend is deployed using Render.
-
-Production requirements:
-
-- MongoDB Atlas connection
-- Environment variables configured
-- OpenAI API key added
-- CORS configured for frontend URL
-
-Deployment commands:
-
-Build:
-
-```bash
-npm install
-```
-
-Start:
-
-```bash
-npm start
-```
-
----
-
 # Security
 
 Implemented security measures:
@@ -398,38 +368,3 @@ Implemented security measures:
 - MongoDB authentication
 
 Sensitive files are excluded using `.gitignore`.
-
----
-
-# Future Improvements
-
-Planned improvements:
-
-- User dashboard
-- Proposal editor
-- Proposal templates
-- PDF export
-- Email generation
-- WhatsApp outreach messages
-- Pitch analytics
-- Subscription system
-- Usage limits for AI generations
-
----
-
-# Credits
-
-## Developer
-
-Built and developed by **M. Muneeb**
-
-Frontend Developer
-
-GitHub:
-[https://github.com/mmuneeb1000](https://github.com/mmuneeb1000)
-
----
-
-## Project
-
-CloserKit is an AI-powered SaaS project created to help freelancers and businesses generate professional client pitches faster using modern web technologies and artificial intelligence.
