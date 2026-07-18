@@ -2,7 +2,7 @@ import Project from "../models/Project.js";
 
 export const createProject = async (req, res) => {
   try {
-    const { businessName, website, industry, city, notes } = req.body;
+    const { businessName, website, industry, city, phone, notes } = req.body;
 
     // Validate input
     if (!businessName) {
