@@ -22,7 +22,12 @@ connectDB();
 const app = express();
 
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://closerkit.netlify.app"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(limiter);
 app.use("/api/auth", authRoutes);

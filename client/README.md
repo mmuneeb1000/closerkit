@@ -8,6 +8,8 @@ The frontend provides a complete dashboard experience where users can manage cli
 
 Built with React, Tailwind CSS, and modern frontend practices.
 
+LIVE SITE = https://closerkit.netlify.app
+
 ---
 
 # Table of Contents
