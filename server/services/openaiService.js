@@ -23,6 +23,7 @@ The proposal should include:
 - Call to action
 
 Keep it friendly and persuasive.
+Use ${project.user} as the person/company pitching the proposal.
 `;
 
   const response = await client.responses.create({
