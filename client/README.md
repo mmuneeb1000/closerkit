@@ -1,6 +1,6 @@
 # CloserKit Frontend
 
-![CloserKit Banner](./screenshots/banner.png)
+![CloserKit Banner](./screenshots/closerkit.jpg)
 
 CloserKit is an AI-powered proposal generation platform designed to help freelancers, agencies, and businesses quickly create personalized website development proposals.
 
