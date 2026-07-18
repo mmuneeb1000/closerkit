@@ -5,7 +5,7 @@ export default function AuthRequired() {
   return (
     <section className="flex min-h-[80vh] items-center justify-center bg-surface px-6">
       <div className="w-full max-w-2xl rounded-2xl bg-white p-10 text-center shadow-lg">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-primary">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-neutral-900">
           <FiLock size={36} />
         </div>
 
@@ -66,7 +66,7 @@ export default function AuthRequired() {
 
         <Link
           to="/register"
-          className="mt-10 inline-flex items-center gap-2 text-primary hover:underline"
+          className="mt-10 inline-flex items-center gap-2 text-neutral-900 hover:underline"
         >
           Get started for free
           <FiArrowRight />

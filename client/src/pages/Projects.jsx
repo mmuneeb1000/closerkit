@@ -71,14 +71,16 @@ export default function Projects() {
   }
 
   async function generateProposal(project) {
+    setSelectedProject(project);
+    setShowProposalModal(true);
+    setProposal(null);
+
     try {
       const { data } = await api.post("/pitches/proposal", {
         projectId: project._id,
       });
 
       setProposal(data.proposal || data.response);
-      setSelectedProject(project);
-      setShowProposalModal(true);
     } catch (err) {
       console.error(err);
     }

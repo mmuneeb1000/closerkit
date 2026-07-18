@@ -72,7 +72,8 @@ export default function Login() {
 
             <button
               disabled
-              className="mt-8 flex w-full items-center justify-center gap-3 rounded-xl border p-3 opacity-60"
+              className="mt-8 flex w-full items-center justify-center 
+              gap-3 rounded-xl border p-3 opacity-60"
             >
               <FcGoogle size={22} />
               Continue with Google
@@ -141,7 +142,7 @@ export default function Login() {
 
               <button
                 disabled={loading}
-                className="w-full rounded-xl bg-primary py-3 font-medium text-white"
+                className="w-full rounded-xl bg-green-600 py-3 font-medium text-white"
               >
                 {loading ? "Signing In..." : "Login"}
               </button>

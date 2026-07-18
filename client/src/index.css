@@ -1,4 +1,9 @@
 @import "tailwindcss";
+body {
+  font-size: 1.125rem;
+  font-family: "Outfit", sans-serif;
+}
+
 button {
   cursor: pointer;
 }
