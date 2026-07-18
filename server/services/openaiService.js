@@ -5,7 +5,7 @@ export const generateProposal = async (project) => {
     apiKey: process.env.OPENAI_API_KEY,
   });
   const prompt = `
-Create a professional website development proposal in 100-120 words. Proposal should be simple and straightforward.
+Create a professional website development proposal in 100-120 words. Proposal should be straightforward.
 
 Business Name: ${project.businessName}
 Website: ${project.website}
@@ -22,8 +22,8 @@ The proposal should include:
 - Benefits
 - Call to action
 
-Keep it friendly and persuasive.
-Use ${project.user} as the person/company pitching the proposal.
+Keep it friendly, simple and persuasive.
+
 `;
 
   const response = await client.responses.create({
