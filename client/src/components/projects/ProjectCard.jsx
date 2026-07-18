@@ -63,7 +63,6 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
           border-red-200 px-4 py-2 text-danger transition hover:bg-red-50"
         >
           <FiTrash2 />
-          Delete
         </button>
       </div>
     </article>
