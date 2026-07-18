@@ -16,6 +16,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
         website: project.website || "",
         industry: project.industry || "",
         city: project.city || "",
+        phone: project.phone || "",
         notes: project.notes || "",
       });
     }
@@ -44,6 +45,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
       website: "",
       industry: "",
       city: "",
+      phone: "",
       notes: "",
     });
   }
@@ -87,6 +89,14 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
         onChange={handleChange}
         className="rounded-lg border p-3"
         required
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Business Phone Number"
+        value={formData.phone}
+        onChange={handleChange}
+        className="rounded-lg border p-3"
       />
 
       <textarea

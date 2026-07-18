@@ -18,6 +18,7 @@ export const createProject = async (req, res) => {
       website,
       industry,
       city,
+      phone,
       notes,
     });
 
