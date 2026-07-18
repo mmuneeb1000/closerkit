@@ -5,6 +5,7 @@ AI-powered proposal generation SaaS built using the **MERN stack** (MongoDB, Exp
 CloserKit is designed to help freelancers, agencies, and web developers automate client outreach by generating personalized website development proposals, managing client projects, and organizing proposal history.
 
 The project is being developed with a real SaaS product mindset. While it started as a development project, the long-term goal is to evolve CloserKit into a genuine product that helps professionals streamline their sales and client acquisition workflow.
+LIVE SITE = https://closerkit.netlify.app
 
 ---
 
