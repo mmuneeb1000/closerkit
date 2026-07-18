@@ -82,3 +82,20 @@ export const deletePitch = async (req, res) => {
     });
   }
 };
+export const deleteAllPitches = async (req, res) => {
+  try {
+    await Pitch.deleteMany({
+      user: req.user._id,
+    });
+
+    res.status(200).json({
+      message: "All proposals deleted successfully.",
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Server error",
+    });
+  }
+};

@@ -32,6 +32,25 @@ export default function Pitches() {
       setLoading(false);
     }
   }
+  async function handleDeleteAll() {
+    if (
+      !window.confirm(
+        "Delete all saved proposals? This action cannot be undone.",
+      )
+    ) {
+      return;
+    }
+
+    try {
+      await api.delete("/pitches");
+
+      setPitches([]);
+      setSelectedPitch(null);
+      setShowProposal(false);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   function handleView(pitch) {
     setSelectedPitch(pitch);
@@ -86,12 +105,21 @@ export default function Pitches() {
             View and manage all AI-generated website proposals.
           </p>
         </div>
+        {pitches.length > 0 && (
+          <button
+            onClick={handleDeleteAll}
+            className="rounded-lg border border-red-200 px-5 py-2 text-red-600 transition hover:bg-red-50"
+          >
+            Delete All
+          </button>
+        )}
 
         {pitches.length === 0 ? (
           <EmptyPitches />
         ) : (
           <PitchList
             pitches={pitches}
+            pitch={selectedPitch}
             onView={handleView}
             onDelete={handleDelete}
           />

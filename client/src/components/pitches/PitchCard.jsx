@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { FiEye, FiTrash2, FiCalendar, FiCopy, FiCheck } from "react-icons/fi";
+import { FiCalendar, FiCopy, FiCheck, FiTrash2 } from "react-icons/fi";
 
 export default function PitchCard({ pitch, onView, onDelete }) {
-  const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  async function handleCopy() {
+  async function handleCopy(e) {
+    e.stopPropagation();
+
     try {
       await navigator.clipboard.writeText(pitch.response);
 
@@ -19,66 +20,62 @@ export default function PitchCard({ pitch, onView, onDelete }) {
     }
   }
 
+  function handleDelete(e) {
+    e.stopPropagation();
+    onDelete(pitch._id);
+  }
+
   return (
-    <article className="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md">
-      <div className="flex items-start justify-between">
+    <article
+      onClick={() => onView(pitch)}
+      className="cursor-pointer rounded-xl border bg-white p-5 shadow-sm transition hover:border-primary hover:shadow-md"
+    >
+      <div className="flex items-start justify-between gap-4">
         <div>
           <h2 className="text-lg font-semibold text-text">
             {pitch.project?.businessName}
           </h2>
 
-          <p className="text-sm text-muted">{pitch.project?.industry}</p>
+          <p className="mt-1 text-sm text-muted">{pitch.project?.industry}</p>
         </div>
 
         <div className="flex items-center gap-2 text-sm text-muted">
           <FiCalendar />
-          {new Date(pitch.createdAt).toLocaleDateString()}
+          <span>{new Date(pitch.createdAt).toLocaleDateString()}</span>
         </div>
       </div>
 
-      <div className="mt-5 rounded-lg bg-gray-50 p-4">
-        <p
-          className={`whitespace-pre-wrap text-sm leading-7 text-muted ${
-            expanded ? "" : "line-clamp-4"
-          }`}
-        >
+      <div className="mt-4 rounded-lg bg-gray-50 p-4">
+        <p className="line-clamp-4 whitespace-pre-wrap text-sm leading-7 text-muted">
           {pitch.response}
         </p>
-
-        {pitch.response.length > 220 && (
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="mt-3 text-sm font-medium text-primary hover:underline"
-          >
-            {expanded ? "Read Less" : "Read More"}
-          </button>
-        )}
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-3">
-        <button
-          onClick={() => onView(pitch)}
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white"
-        >
-          <FiEye />
-          View
-        </button>
+      <div
+        className="mt-5 flex items-center justify-between"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <p className="text-sm font-medium text-primary">
+          Click anywhere to read the full proposal
+        </p>
 
-        <button
-          onClick={handleCopy}
-          className="flex items-center gap-2 rounded-lg border px-4 py-2 hover:bg-gray-100"
-        >
-          {copied ? <FiCheck /> : <FiCopy />}
-          {copied ? "Copied" : "Copy"}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-2 rounded-lg border px-4 py-2 transition hover:bg-gray-100"
+          >
+            {copied ? <FiCheck /> : <FiCopy />}
+            {copied ? "Copied" : "Copy"}
+          </button>
 
-        <button
-          onClick={() => onDelete(pitch._id)}
-          className="flex items-center gap-2 rounded-lg border border-red-200 px-4 py-2 text-danger hover:bg-red-50"
-        >
-          <FiTrash2 />
-          Delete
-        </button>
+          <button
+            onClick={handleDelete}
+            className="rounded-lg border border-red-200 p-2 text-danger transition hover:bg-red-50"
+            title="Delete Proposal"
+          >
+            <FiTrash2 />
+          </button>
+        </div>
       </div>
     </article>
   );
