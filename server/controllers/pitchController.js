@@ -39,3 +39,46 @@ export const createProposal = async (req, res) => {
     });
   }
 };
+export const getPitches = async (req, res) => {
+  try {
+    const pitches = await Pitch.find({
+      user: req.user._id,
+    })
+      .populate("project")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json(pitches);
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Server error",
+    });
+  }
+};
+export const deletePitch = async (req, res) => {
+  try {
+    const pitch = await Pitch.findOne({
+      _id: req.params.id,
+      user: req.user._id,
+    });
+
+    if (!pitch) {
+      return res.status(404).json({
+        message: "Pitch not found",
+      });
+    }
+
+    await pitch.deleteOne();
+
+    res.status(200).json({
+      message: "Pitch deleted successfully",
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Server error",
+    });
+  }
+};

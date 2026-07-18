@@ -109,7 +109,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
 
         <button
           type="submit"
-          className="rounded-lg bg-primary px-5 py-2 text-white hover:bg-primary-dark"
+          className="rounded-lg bg-neutral-800 px-5 py-2 text-white hover:bg-neutral-900"
         >
           {project ? "Update Project" : "Create Project"}
         </button>

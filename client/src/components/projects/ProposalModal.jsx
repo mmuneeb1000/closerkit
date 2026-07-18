@@ -15,7 +15,7 @@ export default function ProposalModal({ open, onClose, proposal }) {
       <div className="mt-6 flex gap-3">
         <button
           onClick={copyProposal}
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white"
+          className="flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-white"
         >
           <FiClipboard />
           Copy

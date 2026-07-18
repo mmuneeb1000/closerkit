@@ -41,7 +41,8 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
       <div className="mt-6 flex flex-wrap gap-2">
         <button
           onClick={() => onGenerate(project)}
-          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-white transition hover:bg-primary-dark"
+          className="flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 text-white 
+          transition hover:bg-primary-dark"
         >
           <FiFileText />
           Generate
@@ -49,7 +50,8 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
 
         <button
           onClick={() => onEdit?.(project)}
-          className="flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 transition hover:bg-gray-100"
+          className="flex items-center gap-2 rounded-lg border 
+          border-gray-200 px-4 py-2 transition hover:bg-gray-100"
         >
           <FiEdit2 />
           Edit
@@ -57,7 +59,8 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
 
         <button
           onClick={onDelete}
-          className="flex items-center gap-2 rounded-lg border border-red-200 px-4 py-2 text-danger transition hover:bg-red-50"
+          className="flex items-center gap-2 rounded-lg border 
+          border-red-200 px-4 py-2 text-danger transition hover:bg-red-50"
         >
           <FiTrash2 />
           Delete
