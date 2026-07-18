@@ -124,8 +124,8 @@ export default function Login() {
               </div>
 
               <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center gap-2">
-                  <input type="checkbox" />
+                <label className="flex items-center gap-2 ">
+                  <input type="checkbox" className="cursor-pointer" />
                   Remember me
                 </label>
 

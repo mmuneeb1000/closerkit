@@ -16,14 +16,16 @@ export default function Header() {
   ];
 
   const linkClass = ({ isActive }) =>
-    `transition ${
-      isActive ? "text-neutral-900 font-semibold" : "text-muted hover:text-text"
+    `transition text-neutral-900 border-b-2 hover:text-green-800 py-2  ${
+      isActive
+        ? "hover:text-green-800 font-semibold border-green-600"
+        : "border-white hover:border-green-600"
     }`;
 
   return (
     <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <NavLink to="/" className="flex items-center gap-3">
+        <NavLink to="/" className="flex flex-wrap items-center gap-3 ">
           <div className="rounded-lg bg-green-600 p-2 text-white">
             <RiRobot2Line size={20} />
           </div>
@@ -31,7 +33,7 @@ export default function Header() {
           <span className="text-2xl font-bold text-text">CloserKit</span>
         </NavLink>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 md:flex ">
           {navLinks.map((link) => (
             <NavLink key={link.path} to={link.path} className={linkClass}>
               {link.name}
@@ -39,7 +41,7 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center justify-end gap-3 md:flex">
           {user ? (
             <>
               <div className="flex items-center gap-3">
@@ -54,7 +56,7 @@ export default function Header() {
 
               <button
                 onClick={logout}
-                className="flex items-center gap-2 rounded-lg border px-4 py-2 hover:bg-gray-100"
+                className="flex items-center gap-2 rounded-lg border px-4 py-2 hover:bg-gray-100 "
               >
                 <FiLogOut />
                 Logout
@@ -64,14 +66,14 @@ export default function Header() {
             <>
               <NavLink
                 to="/login"
-                className="rounded-lg px-4 py-2 hover:bg-gray-100"
+                className="rounded-lg px-4 py-2 border border-neutral-900 hover:bg-gray-100"
               >
                 Login
               </NavLink>
 
               <NavLink
                 to="/register"
-                className="rounded-lg bg-primary px-5 py-2 text-white hover:bg-primary-dark"
+                className="rounded-lg bg-green-600 border border-green-600 px-5 py-2 text-white hover:bg-green-800"
               >
                 Get Started
               </NavLink>
@@ -135,7 +137,7 @@ export default function Header() {
                   <NavLink
                     to="/register"
                     onClick={() => setOpen(false)}
-                    className="block rounded-lg bg-primary py-3 text-center text-white"
+                    className="block rounded-lg bg-green-600 py-3 text-center text-white"
                   >
                     Create Account
                   </NavLink>

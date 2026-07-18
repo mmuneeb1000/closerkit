@@ -37,7 +37,6 @@ export default function PitchCard({ pitch, onView, onDelete }) {
       onClick={() => onView(pitch)}
       className="group flex cursor-pointer gap-5 border-b bg-white p-5 transition hover:bg-gray-50"
     >
-      {/* Timeline */}
       <div className="flex flex-col items-center">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
           <FiFileText />
@@ -46,7 +45,6 @@ export default function PitchCard({ pitch, onView, onDelete }) {
         <div className="mt-2 h-full w-px bg-gray-200" />
       </div>
 
-      {/* Content */}
       <div className="flex-1">
         <div className="flex flex-col justify-between gap-3 md:flex-row">
           <div>
@@ -63,14 +61,12 @@ export default function PitchCard({ pitch, onView, onDelete }) {
           </div>
         </div>
 
-        {/* Preview */}
         <div className="mt-4 rounded-lg bg-gray-50 p-4">
           <p className="line-clamp-3 whitespace-pre-wrap text-sm leading-6 text-muted">
             {pitch.response}
           </p>
         </div>
 
-        {/* Actions */}
         <div className="mt-4 flex gap-2">
           <button
             onClick={(e) => {

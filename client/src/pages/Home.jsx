@@ -101,20 +101,20 @@ export default function Home() {
               client outreach from a single dashboard.
             </p>
 
-            <div className="mt-10 flex flex-wrap justify-center gap-4 lg:justify-start">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/register"
-                className="rounded-xl bg-green-600 px-7 py-2 font-medium 
-                text-white transition hover:bg-green-800"
+                className="rounded-xl bg-green-600 px-12 py-2 font-medium 
+                text-white transition hover:bg-green-800 "
               >
-                Get Started
+                Try Out CloserKit!
               </Link>
-
               <Link
-                to="/login"
-                className="rounded-xl border px-7 py-2 font-medium hover:bg-gray-50"
+                to="/dashboard"
+                className="rounded-xl bg-white border border-neutral-900 px-12 py-2 font-medium 
+                text-neutral-900 transition hover:bg-gray-100 "
               >
-                Login
+                View Dashboard
               </Link>
             </div>
 
@@ -232,8 +232,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Future */}
-
       <section className="mx-auto max-w-7xl px-6 py-10 lg:py-24">
         <div className="rounded-3xl bg-white p-12 shadow-sm">
           <div className="flex items-center gap-3">
@@ -256,8 +254,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-
       <section className="bg-green-600 pt-8 pb-20 lg:py-24 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <FiGlobe size={56} className="mx-auto mb-8" />
@@ -274,7 +270,7 @@ export default function Home() {
           <Link
             to="/register"
             className="mt-10 inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 
-            font-semibold text-black transition hover:scale-105"
+            font-semibold text-black transition hover:scale-105 "
           >
             Create Free Account
             <FiArrowRight />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
   const [formData, setFormData] = useState({
@@ -8,7 +8,12 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
     city: "",
     notes: "",
   });
-
+  const businessNameRef = useRef(null);
+  useEffect(() => {
+    if (businessNameRef.current) {
+      businessNameRef.current.focus();
+    }
+  }, []);
   useEffect(() => {
     if (project) {
       setFormData({
@@ -51,75 +56,144 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4">
-      <input
-        type="text"
-        name="businessName"
-        placeholder="Business Name"
-        value={formData.businessName}
-        onChange={handleChange}
-        className="rounded-lg border p-3"
-        required
-      />
+    <form onSubmit={handleSubmit} className="grid gap-2">
+      <div>
+        <label
+          htmlFor="businessName"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Business Name
+        </label>
 
-      <input
-        type="url"
-        name="website"
-        placeholder="Website"
-        value={formData.website}
-        onChange={handleChange}
-        className="rounded-lg border p-3"
-      />
+        <input
+          ref={businessNameRef}
+          id="businessName"
+          type="text"
+          name="businessName"
+          value={formData.businessName}
+          onChange={handleChange}
+          placeholder="Prime Estate Advisors"
+          autoComplete="organization"
+          required
+          className="w-full rounded-lg border border-gray-300 p-2 
+          focus-input"
+        />
+      </div>
 
-      <input
-        type="text"
-        name="industry"
-        placeholder="Industry"
-        value={formData.industry}
-        onChange={handleChange}
-        className="rounded-lg border p-3"
-        required
-      />
+      <div>
+        <label
+          htmlFor="website"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Website
+        </label>
 
-      <input
-        type="text"
-        name="city"
-        placeholder="City"
-        value={formData.city}
-        onChange={handleChange}
-        className="rounded-lg border p-3"
-        required
-      />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Business Phone Number"
-        value={formData.phone}
-        onChange={handleChange}
-        className="rounded-lg border p-3"
-      />
+        <input
+          id="website"
+          type="url"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          placeholder="https://example.com"
+          autoComplete="url"
+          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+        />
+      </div>
 
-      <textarea
-        name="notes"
-        placeholder="Additional notes..."
-        value={formData.notes}
-        onChange={handleChange}
-        rows={5}
-        className="rounded-lg border p-3"
-      />
+      <div>
+        <label
+          htmlFor="industry"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Industry
+        </label>
+
+        <input
+          id="industry"
+          type="text"
+          name="industry"
+          value={formData.industry}
+          onChange={handleChange}
+          placeholder="Property Dealer"
+          required
+          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="city"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          City
+        </label>
+
+        <input
+          id="city"
+          type="text"
+          name="city"
+          value={formData.city}
+          onChange={handleChange}
+          placeholder="Islamabad"
+          autoComplete="address-level2"
+          required
+          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="phone"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Business Phone Number
+          <span className="ml-1 text-gray-500">(Optional)</span>
+        </label>
+
+        <input
+          id="phone"
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="+92 300 11224433"
+          autoComplete="tel"
+          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="notes"
+          className="mb-2 block text-sm font-medium text-gray-700"
+        >
+          Project Notes
+          <span className="ml-1 text-gray-500">(Optional)</span>
+        </label>
+
+        <textarea
+          id="notes"
+          name="notes"
+          value={formData.notes}
+          onChange={handleChange}
+          rows={5}
+          placeholder="Describe the current website, pain points, redesign ideas, or anything that will help generate a better proposal."
+          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+        />
+      </div>
 
       <div className="flex justify-end gap-3 pt-2">
         <button
           type="button"
           onClick={onClose}
-          className="rounded-lg border px-5 py-2 hover:bg-gray-100"
+          className="rounded-lg border border-gray-300 px-5 py-2 font-medium transition hover:bg-gray-100 focus:border-green-600 focus:ring-2 focus:ring-green-600 focus:outline-none"
         >
           Cancel
         </button>
 
         <button
           type="submit"
-          className="rounded-lg bg-neutral-800 px-5 py-2 text-white hover:bg-neutral-900"
+          className="rounded-lg bg-green-600 px-5 py-2 font-medium text-white transition hover:bg-green-800 focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:outline-none"
         >
           {project ? "Update Project" : "Create Project"}
         </button>

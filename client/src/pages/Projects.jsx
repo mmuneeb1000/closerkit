@@ -123,7 +123,10 @@ export default function Projects() {
   return (
     <section className="min-h-screen bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="mb-8 flex items-center justify-between">
+        <div
+          className="mb-8 flex flex-col gap-4 text-center items-center justify-between
+        lg:flex-row lg:text-left"
+        >
           <div>
             <h1 className="text-4xl font-bold text-text">Projects</h1>
 
@@ -134,7 +137,7 @@ export default function Projects() {
 
           <button
             onClick={() => setShowProjectModal(true)}
-            className="rounded-lg bg-green-600 px-5 py-3 font-medium text-white transition hover:bg-green-700"
+            className="rounded-lg bg-green-600 px-5 py-3 font-medium text-white transition hover:bg-green-800"
           >
             New Project
           </button>
