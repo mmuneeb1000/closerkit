@@ -17,7 +17,7 @@ export default function DeleteModal({ open, onClose, onConfirm, project }) {
 
         <button
           onClick={onConfirm}
-          className="rounded-lg bg-danger px-5 py-2 text-white"
+          className="rounded-lg bg-red-600 px-5 py-2 text-white"
         >
           Delete
         </button>

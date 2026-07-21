@@ -27,14 +27,18 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
           </div>
 
           <div className="flex items-center gap-2">
-            <FiGlobe />
+            <FiGlobe className="shrink-0" />
+
             <a
               href={project.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="truncate hover:text-primary"
+              title={project.website}
+              className="min-w-0 truncate hover:text-primary"
             >
-              {project.website}
+              {project.website.length > 40
+                ? `${project.website.slice(0, 40)}...`
+                : project.website}
             </a>
           </div>
           <div className="flex items-center gap-2">

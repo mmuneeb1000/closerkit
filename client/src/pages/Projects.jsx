@@ -146,7 +146,7 @@ export default function Projects() {
         {projects.length === 0 ? (
           <EmptyProjects />
         ) : (
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-4 md:gap-6 md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard
                 key={project._id}
