@@ -6,6 +6,7 @@ import EmptyProjects from "../components/projects/EmptyProjects";
 import ProjectModal from "../components/projects/ProjectModal";
 import DeleteModal from "../components/projects/DeleteModal";
 import ProposalModal from "../components/projects/ProposalModal";
+import ProjectCategories from "../components/projects/ProjectCategories";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -19,6 +20,13 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [proposal, setProposal] = useState("");
   const [editingProject, setEditingProject] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const categories = ["All", ...new Set(projects.map((p) => p.industry))];
+
+  const filteredProjects =
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.industry === activeCategory);
 
   useEffect(() => {
     getProjects();
@@ -150,12 +158,20 @@ export default function Projects() {
             New Project
           </button>
         </div>
-
+        <ProjectCategories
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
         {projects.length === 0 ? (
           <EmptyProjects />
+        ) : filteredProjects.length === 0 ? (
+          <p className="text-center text-muted-foreground py-10">
+            No projects in this category.
+          </p>
         ) : (
           <div className="grid gap-4 md:gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <ProjectCard
                 key={project._id}
                 project={project}
