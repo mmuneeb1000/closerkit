@@ -128,8 +128,16 @@ export default function Projects() {
         lg:flex-row lg:text-left"
         >
           <div>
-            <h1 className="text-4xl font-bold text-text">Projects</h1>
+            <div className="flex items-center justify-center md:justify-start gap-4">
+              <h1 className="text-4xl font-bold text-neutral-900">Projects</h1>
 
+              <span
+                className="flex min-h-6 min-w-6 items-center justify-center 
+              rounded-full bg-green-500 px-2 text-sm font-semibold text-white"
+              >
+                {projects.length}
+              </span>
+            </div>
             <p className="mt-2 text-muted">
               Manage your clients and generate AI-powered proposals.
             </p>
