@@ -29,6 +29,23 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
 
   function handleChange(e) {
     const { name, value } = e.target;
+    if (name === "website") {
+      let website = value.replace(/\s+/g, "").toLowerCase();
+
+      if (
+        website &&
+        !website.startsWith("http://") &&
+        !website.startsWith("https://")
+      ) {
+        website = `https://${website}`;
+      }
+      setFormData((prev) => ({
+        ...prev,
+        website,
+      }));
+
+      return;
+    }
 
     setFormData((prev) => ({
       ...prev,
