@@ -8,6 +8,20 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
     city: "",
     notes: "",
   });
+  const noteTemplates = [
+    {
+      label: "No Website",
+      text: "Business has no website.",
+    },
+    {
+      label: "Poor Design",
+      text: "Business has a badly designed website.",
+    },
+    {
+      label: "Not Mobile Friendly",
+      text: "Business has a website that isn't mobile friendly.",
+    },
+  ];
   const businessNameRef = useRef(null);
   useEffect(() => {
     if (businessNameRef.current) {
@@ -179,7 +193,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
         />
       </div>
 
-      <div>
+      <div className="relative">
         <label
           htmlFor="notes"
           className="mb-2 block text-sm font-medium text-gray-700"
@@ -187,6 +201,23 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           Project Notes
           <span className="ml-1 text-gray-500">(Optional)</span>
         </label>
+        <div className="absolute mb-2 flex flex-wrap gap-2 bottom-0 left-4">
+          {noteTemplates.map((template) => (
+            <button
+              key={template.label}
+              type="button"
+              onClick={() =>
+                setFormData((prev) => ({
+                  ...prev,
+                  notes: template.text,
+                }))
+              }
+              className="rounded-md border border-gray-300 px-3 py-1 text-xs transition-colors hover:border-primary hover:text-primary"
+            >
+              {template.label}
+            </button>
+          ))}
+        </div>
 
         <textarea
           id="notes"
