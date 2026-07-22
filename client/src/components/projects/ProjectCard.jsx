@@ -11,7 +11,7 @@ export default function ProjectCard({ project, onGenerate, onEdit, onDelete }) {
   return (
     <article
       className="rounded-xl flex flex-col bg-white justify-between
-     p-6 shadow-sm transition hover:shadow-md"
+     p-4 shadow-sm transition hover:shadow-md"
     >
       <div>
         <h2 className="text-xl font-semibold text-text">
