@@ -91,7 +91,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
       <div>
         <label
           htmlFor="businessName"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           Business Name
         </label>
@@ -106,7 +106,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           placeholder="Prime Estate Advisors"
           autoComplete="organization"
           required
-          className="w-full rounded-lg border border-gray-300 p-2 
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 
           focus-input"
         />
       </div>
@@ -114,7 +114,7 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
       <div>
         <label
           htmlFor="website"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           Website
         </label>
@@ -127,14 +127,14 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           onChange={handleChange}
           placeholder="https://example.com"
           autoComplete="url"
-          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 focus-input"
         />
       </div>
 
       <div>
         <label
           htmlFor="industry"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           Industry
         </label>
@@ -147,14 +147,14 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           onChange={handleChange}
           placeholder="Property Dealer"
           required
-          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 focus-input"
         />
       </div>
 
       <div>
         <label
           htmlFor="city"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           City
         </label>
@@ -168,14 +168,14 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           placeholder="Islamabad"
           autoComplete="address-level2"
           required
-          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 focus-input"
         />
       </div>
 
       <div>
         <label
           htmlFor="phone"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           Business Phone Number
           <span className="ml-1 text-gray-500">(Optional)</span>
@@ -189,19 +189,19 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           onChange={handleChange}
           placeholder="+92 300 11224433"
           autoComplete="tel"
-          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 focus-input"
         />
       </div>
 
       <div className="relative">
         <label
           htmlFor="notes"
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm lg:text-base font-medium text-gray-700"
         >
           Project Notes
           <span className="ml-1 text-gray-500">(Optional)</span>
         </label>
-        <div className="absolute mb-2 flex flex-wrap gap-2 bottom-0 left-4">
+        <div className="absolute mb-2 flex flex-wrap gap-2 pt-1 bottom-0 left-2">
           {noteTemplates.map((template) => (
             <button
               key={template.label}
@@ -212,7 +212,8 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
                   notes: template.text,
                 }))
               }
-              className="rounded-md border border-gray-300 px-3 py-1 text-xs transition-colors hover:border-primary hover:text-primary"
+              className="rounded-md border border-gray-300 px-3 py-1 text-xs 
+              transition-colors hover:border-primary hover:text-primary"
             >
               {template.label}
             </button>
@@ -225,8 +226,8 @@ export default function ProjectForm({ onCreate, onUpdate, onClose, project }) {
           value={formData.notes}
           onChange={handleChange}
           rows={5}
-          placeholder="Describe the current website, pain points, redesign ideas, or anything that will help generate a better proposal."
-          className="w-full rounded-lg border border-gray-300 p-2 focus-input"
+          placeholder="Describe the current website, pain points and redesign ideas"
+          className="w-full rounded-lg text-sm lg:text-base border border-gray-300 p-2 focus-input"
         />
       </div>
 
